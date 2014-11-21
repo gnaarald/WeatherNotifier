@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -41,7 +42,16 @@ public class Login extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        final TextView firstTextView = (TextView) findViewById(R.id.textView);
 
+        Button button1 = (Button) findViewById(R.id.button1);
+
+        button1.setOnClickListener(new View.OnClickListener(){
+           @Override
+            public void onClick(View view){
+            firstTextView.setText("Cannot Unclick");
+           }
+        });
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
